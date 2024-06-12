@@ -80,7 +80,6 @@ export default function Form({ route }) {
 
   return (
     <View style={styles.container}>
-      <Title title="Form" />
       <TextInput
         placeholder="Nome da filial"
         style={styles.inputText}

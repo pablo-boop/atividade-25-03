@@ -6,7 +6,7 @@ import { FontAwesome5, Ionicons, FontAwesome6, SimpleLineIcons } from '@expo/vec
 export default function Home() {
   return (
     <View style={styles.container}>
-      <Title title="Home" />
+      <Title title={'Home'}/>
       <ScrollView>
       <View style={styles.card}>
         <Image style={styles.img} source={require('../../../assets/papelada.avif')} />

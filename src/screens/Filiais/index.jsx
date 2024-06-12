@@ -31,7 +31,6 @@ export default function Filiais() {
 
   return (
     <View style={styles.container}>
-      <Title style={styles.title} title="Filiais" />
       <Text style={styles.title}>Tela de listagem de todos as filiais</Text>
       <View>
         <TextInput

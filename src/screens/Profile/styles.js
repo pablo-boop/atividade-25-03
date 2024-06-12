@@ -6,6 +6,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: '#121212',
     padding: 12,
+    width: '100%',
+    paddingBottom: 20
   },
   avatar: {
     margin: 20,
@@ -47,7 +49,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#1f1b24',
     margin: 10,
     padding: 25,
-    borderRadius: 5
+    borderRadius: 5,
+    width: 350,
+    height: 'auto',
   },
   sobreTxt: {
     fontSize: 15,
@@ -59,6 +63,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     gap: 20,
+    width: 325
   },
   techsTitle: {
     color: '#7c5295',
@@ -72,17 +77,17 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     marginTop: 30
   },
-  videoBg: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: -20
+  carrosel: {
+    width: 325,
+    height: 150,
+    marginBottom: 30
   },
-  video: {
-    width: 320,
-    height: 300,
-    marginRight: 20
-  },
+  imagesProjects: {
+    width: 300,
+    height: 150,
+    borderRadius: 5,
+    margin: 10,
+  }
 });
 
 export default styles;

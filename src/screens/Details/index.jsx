@@ -28,8 +28,6 @@ export default function Details() {
 
     return (
         <View style={styles.container}>
-            <Title title="Details" />
-
             {filial ? (
                 <View>
                     <Text>Detalhes da Filial</Text>
