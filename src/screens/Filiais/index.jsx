@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View, TextInput } from "react-native";
 import { useNavigation, useIsFocused } from "@react-navigation/native";
 import {
   Provider,
@@ -16,6 +16,7 @@ import usersRepository from "../../models/user/UserRepository";
 
 export default function Filiais() {
   const [visible, setVisible] = useState(false);
+  const [searchBar, setSearchBar] = useState("")
 
   const navigation = useNavigation();
   const isFocused = useIsFocused();
@@ -32,6 +33,15 @@ export default function Filiais() {
     <View style={styles.container}>
       <Title style={styles.title} title="Filiais" />
       <Text style={styles.title}>Tela de listagem de todos as filiais</Text>
+      <View>
+        <TextInput
+          style={styles.searchBar}
+          placeholderTextColor={"#fff"}
+          placeholder="Pesquisar"
+          onChangeText={setSearchBar}
+          value={searchBar}
+        />
+      </View>
 
       {allUsers.length > 0 ? (
         <View style={styles.userList}>
@@ -44,7 +54,7 @@ export default function Filiais() {
               <View style={styles.userActions}>
                 <TouchableOpacity
                   style={styles.detailsButton}
-                  onPress={() => navigation.navigate('Details', {data: user})}
+                  onPress={() => navigation.navigate('Details', {id: user.id})}
                 >
                   <Text>Detalhes</Text>
                 </TouchableOpacity>

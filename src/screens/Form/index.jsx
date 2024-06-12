@@ -82,73 +82,73 @@ export default function Form({ route }) {
     <View style={styles.container}>
       <Title title="Form" />
       <TextInput
-        placeholder="Digite o nome da filial"
+        placeholder="Nome da filial"
         style={styles.inputText}
         onChangeText={setNomeFilial}
         value={nomeFilial}
       />
       <TextInput
-        placeholder="Digite a data de fundação"
+        placeholder="Data de fundação"
         style={styles.inputText}
         onChangeText={setFundacao}
         value={fundacao}
       />
       <TextInput
-        placeholder="Digite a cor primária"
+        placeholder="Cor primária"
         style={styles.inputText}
         onChangeText={setCorPrimaria}
         value={corPrimaria}
       />
       <TextInput
-        placeholder="Digite a cor secundária"
+        placeholder="Cor secundária"
         style={styles.inputText}
         onChangeText={setCorSecundaria}
         value={corSecundaria}
       />
       <TextInput
-        placeholder="Digite a quantidade de funcionários"
+        placeholder="Quantidade de funcionários"
         style={styles.inputText}
         onChangeText={setQuantidadeFuncionarios}
         value={quantidadeFuncionarios}
       />
       <TextInput
-        placeholder="Digite a capacidade de alunos matriculados por ano"
+        placeholder="Capacidade de alunos matriculados por ano"
         style={styles.inputText}
         onChangeText={setCapacidadeAlunosMatriculadosPorAno}
         value={capacidadeAlunosMatriculadosPorAno}
       />
       <TextInput
-        placeholder="Digite a quantidade de turmas"
+        placeholder="Quantidade de turmas"
         style={styles.inputText}
         onChangeText={setQuantidadeTurmas}
         value={quantidadeTurmas}
       />
       <TextInput
-        placeholder="Digite o endereço"
+        placeholder="Endereço"
         style={styles.inputText}
         onChangeText={setEndereco}
         value={endereco}
       />
       <TextInput
-        placeholder="Digite o telefone"
+        placeholder="Telefone"
         style={styles.inputText}
         onChangeText={setTelefone}
         value={telefone}
       />
       <TextInput
-        placeholder="Digite o email"
+        placeholder="Email"
         style={styles.inputText}
         onChangeText={setEmail}
         value={email}
       />
       <TextInput
-        placeholder="Digite o nome do responsável"
+        placeholder="Nome do responsável"
         style={styles.inputText}
         onChangeText={setNomeResponsavel}
         value={nomeResponsavel}
       />
       <TextInput
-        placeholder="Digite o cargo do responsável"
+        placeholder="Cargo do responsável"
         style={styles.inputText}
         onChangeText={setCargoResponsavel}
         value={cargoResponsavel}

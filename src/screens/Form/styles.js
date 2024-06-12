@@ -5,9 +5,14 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     padding: 20,
-    backgroundColor: '#121212'
+    backgroundColor: '#121212',
   },
   button: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent:'center',
+    gap: 10,
+    width: 125,
     marginTop: 20,
     padding: 10,
     backgroundColor: "#7c5295",
@@ -23,12 +28,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#1f1b24',
     borderRadius: 5,
     margin: 5,
-    width: 250,
+    width: 300,
     height: 40,
     padding: 8
   },
   buttonTxt: {
-    color: '#fff'
+    color: '#fff',
+    fontSize: 15
   },
   buttons: {
     display: 'flex',

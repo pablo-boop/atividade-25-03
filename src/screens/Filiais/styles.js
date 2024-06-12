@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { SearchBar } from "react-native-screens";
 
 const styles = StyleSheet.create({
   container: {
@@ -53,6 +54,15 @@ const styles = StyleSheet.create({
     color: '#fff'
   },
   title: {
+    color: '#fff'
+  },
+  searchBar: {
+    backgroundColor: '#1f1b24',
+    borderRadius: 5,
+    width: 250,
+    height: 40,
+    marginTop: 30,
+    padding: 10,
     color: '#fff'
   }
 });

@@ -8,14 +8,18 @@ const styles = StyleSheet.create({
         backgroundColor: '#121212'
     },
     user: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
         backgroundColor: '#1f1b24',
-        width: 250,
+        width: 300,
+        height: 500,
         padding: 15,
         borderRadius: 10
     },
     txt: {
         color: '#fff',
-        fontSize: 14,
+        fontSize: 20,
         fontWeight: '500'
     },
     userActions: {
@@ -33,10 +37,12 @@ const styles = StyleSheet.create({
         backgroundColor: '#7c5295',
         padding: 10,
         borderRadius: 10,
-        width: 75
+        width: 120,
+        margin: 15
     },
     buttonTxt: {
-        color: '#fff'
+        color: '#fff',
+        fontSize: 20
     }
 })
 

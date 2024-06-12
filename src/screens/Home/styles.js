@@ -5,7 +5,8 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     backgroundColor: '#121212',
-    padding: 20
+    padding: 20,
+    paddingBottom: 100,
   },
   button: {
     marginTop: 20,
@@ -20,7 +21,8 @@ const styles = StyleSheet.create({
     height: 100,
     borderRadius: 10,
     margin: 5,
-    backgroundColor: '#1f1b24'
+    backgroundColor: '#1f1b24',
+    marginBottom: 50
   },
   img: {
     width: 300,
@@ -44,35 +46,22 @@ const styles = StyleSheet.create({
     color: '#fff',
     width: 250
   },
-  icons: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    margin: 50,
-    padding: 10,
-    width: 200,
-    gap: 15
-  },
-  icon: {
-    margin: 20
-  },
   resumo: {
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 50,
+    marginTop: 120,
     width: 300,
-    height: 200
+    height: 200,
   },
   imageResumo: {
-    width: 150,
+    width: 300,
     height: 200,
     borderRadius: 5
   },
   txtResumo: {
-    width: 200,
+    width: 300,
     height: 200,
     display: 'flex',
     flexDirection: 'row',
@@ -80,7 +69,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     textAlign: 'justify',
     color: '#fff',
-    margin: 10
+    marginTop: 15
   }
 });
 

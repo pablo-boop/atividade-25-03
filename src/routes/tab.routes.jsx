@@ -22,17 +22,58 @@ const TabRoutes = () => {
       tabBarStyle: { backgroundColor: '#121212' }
     }}>
       <Tab.Screen
-        name="Filiais"
-        component={Filiais}
+        name="Home"
+        component={Home}
         options={{
+          tabBarStyle: {
+            position: 'absolute',
+            bottom: 25,
+            left: 20,
+            right: 20,
+            elevation: 0,
+            backgroundColor: '#1f1b20',
+            borderRadius: 15,
+            height: 90,
+            borderColor: 'transparent'
+          },
           tabBarIcon: ({ focused }) => (
             <Feather
-              name="list"
-              size={24}
+              name="home"
+              size={30}
               color={focused ? "#7c5295" : "#fff"}
             />
           ),
-          tabBarLabel: "Filiais",
+          headerShown: false,
+          tabBarShowLabel: false,
+          tabBarActiveTintColor: "#7c5295",
+          tabBarInactiveTintColor: "#fff",
+        }}
+      />
+      <Tab.Screen
+        name="Filiais"
+        component={Filiais}
+        options={{
+          tabBarStyle: {
+            position: 'absolute',
+            bottom: 25,
+            left: 20,
+            right: 20,
+            elevation: 0,
+            backgroundColor: '#1f1b24',
+            borderRadius: 15,
+            height: 90,
+            borderColor: 'transparent'
+          },
+          tabBarIcon: ({ focused }) => (
+            <Feather
+              name="list"
+              size={30}
+              color={focused ? "#7c5295" : "#fff"}
+            />
+          ),
+          headerShown: false,
+          tabBarShowLabel: false,
+
           tabBarActiveTintColor: "#7c5295",
           tabBarInactiveTintColor: "#fff",
         }}
@@ -42,30 +83,28 @@ const TabRoutes = () => {
         component={Form}
         initialParams={{ user: null, edit: false }}
         options={{
+          tabBarStyle: {
+            position: 'absolute',
+            bottom: 25,
+            left: 20,
+            right: 20,
+            elevation: 0,
+            backgroundColor: '#1f1b24',
+            borderRadius: 15,
+            height: 90,
+            borderColor: 'transparent'
+          },
           tabBarIcon: ({ focused }) => (
             <Feather
               name="printer"
-              size={24}
+              size={30}
               color={focused ? "#7c5295" : "#fff"}
             />
           ),
-          tabBarLabel: "Form",
-          tabBarActiveTintColor: "#7c5295",
-          tabBarInactiveTintColor: "#fff",
-        }}
-      />
-      <Tab.Screen
-        name="Home"
-        component={Home}
-        options={{
-          tabBarIcon: ({ focused }) => (
-            <Feather
-              name="home"
-              size={24}
-              color={focused ? "#7c5295" : "#fff"}
-            />
-          ),
-          tabBarLabel: "Inicial",
+
+          headerShown: false,
+          tabBarShowLabel: false,
+
           tabBarActiveTintColor: "#7c5295",
           tabBarInactiveTintColor: "#fff",
         }}
@@ -75,31 +114,58 @@ const TabRoutes = () => {
         component={Details}
         initialParams={{ users }}
         options={{
+          tabBarStyle: {
+            position: 'absolute',
+            bottom: 25,
+            left: 20,
+            right: 20,
+            elevation: 0,
+            backgroundColor: '#1f1b24',
+            borderRadius: 15,
+            height: 90,
+            borderColor: 'transparent'
+          },
           tabBarIcon: ({ focused }) => (
             <Feather
               name="file-text"
-              size={24}
+              size={30}
               color={focused ? "#7c5295" : "#fff"}
             />
           ),
-          tabBarLabel: "Inicial",
+          headerShown: false,
+          tabBarShowLabel: false,
+
           tabBarActiveTintColor: "#7c5295",
           tabBarInactiveTintColor: "#fff",
+          tabBarButton: () => null,
         }}
       />
+
       <Tab.Screen
         name="Profile"
         component={Profile}
         initialParams={{ data: user }}
         options={{
+          tabBarStyle: {
+            position: 'absolute',
+            bottom: 25,
+            left: 20,
+            right: 20,
+            elevation: 0,
+            backgroundColor: '#1f1b24',
+            borderRadius: 15,
+            height: 90,
+            borderColor: 'transparent'
+          },
           tabBarIcon: ({ focused }) => (
             <Feather
               name="user"
-              size={24}
+              size={30}
               color={focused ? "#7c5295" : "#fff"}
             />
           ),
-          tabBarLabel: "Perfil",
+          headerShown: false,
+          tabBarShowLabel: false,
           tabBarActiveTintColor: "#7c5295",
           tabBarInactiveTintColor: "#fff",
         }}

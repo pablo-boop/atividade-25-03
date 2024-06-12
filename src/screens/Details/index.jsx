@@ -1,67 +1,66 @@
 import { Text, TouchableOpacity, View } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import Title from '../../components/Title'
 
 import styles from "./styles";
 import usersRepository from "../../models/user/UserRepository";
-import User from "../../models/user/User";
-import Profile from '../../data/Profile'
+import { useEffect, useState } from "react";
 
-export default function Details({ route }) {
+export default function Details() {
     const navigation = useNavigation();
-    const { data } = route.params;
+    const route = useRoute();
+    const { id } = route.params;
+    const [filial, setFilial] = useState([]);
+
+    useEffect(() => {
+        const filial = usersRepository.users.find((user) => user.id === id);
+        setFilial(filial);
+    }, [])
 
     const editFilial = () => {
-        navigation.navigate("Form", { user: data, edit: true });
+        navigation.navigate("Form", { id: filial.id, edit: true });
     };
 
     const deleteFilial = () => {
-        usersRepository.remove(data.id);
+        usersRepository.remove(filial.id);
         navigation.navigate("Filiais");
     };
-
-    const addProfile = () => {
-        const newUser = new User.add(Profile);
-        usersRepository.add(newUser)
-    }
-
-    addProfile()
 
     return (
         <View style={styles.container}>
             <Title title="Details" />
 
-            {data ? (
-                <Text>Detalhes da Filial</Text>
+            {filial ? (
+                <View>
+                    <Text>Detalhes da Filial</Text>
+                    <View style={styles.user}>
+                        <View style={styles.userDetail}>
+                            <Text style={styles.txt}>{filial.nomeFilial}</Text>
+                            <Text style={styles.txt}>{filial.fundacao}</Text>
+                            <Text style={{color: filial.corPrimaria, fontSize: 20}}>{filial.corPrimaria}</Text>
+                            <Text style={{color: filial.corSecundaria, fontSize: 20}}>{filial.corSecundaria}</Text>
+                            <Text style={styles.txt}>{filial.quantidadeFuncionarios}</Text>
+                            <Text style={styles.txt}>{filial.capacidadeAlunosMatriculadosPorAno}</Text>
+                            <Text style={styles.txt}>{filial.quantidadeTurmas}</Text>
+                            <Text style={styles.txt}>{filial.endereco}</Text>
+                            <Text style={styles.txt}>{filial.telefone}</Text>
+                            <Text style={styles.txt}>{filial.email}</Text>
+                            <Text style={styles.txt}>{filial.nomeResponsavel}</Text>
+                            <Text style={styles.txt}>{filial.cargoResponsavel}</Text>
+                        </View>
+                        <View style={styles.userActions}>
+                            <TouchableOpacity style={styles.editButton} onPress={editFilial}>
+                                <Text style={styles.buttonTxt}>Editar</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.editButton} onPress={deleteFilial}>
+                                <Text style={styles.buttonTxt}>Excluir</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                </View>
             ) : (
-                <Text>Selecione uma filial para exibir seus detalhes</Text>
+                <Text>Detalhes da filial não encontrada!</Text>
             )}
-
-            <View style={styles.user}>
-                <View style={styles.userDetail}>
-                    <Text style={styles.txt}>{data.nomeFilial}</Text>
-                    <Text style={styles.txt}>{data.fundacao}</Text>
-                    <Text style={styles.txt}>{data.corPrimaria}</Text>
-                    <Text style={styles.txt}>{data.corSecundaria}</Text>
-                    <Text style={styles.txt}>{data.quantidadeFuncionarios}</Text>
-                    <Text style={styles.txt}>{data.capacidadeAlunosMatriculadosPorAno}</Text>
-                    <Text style={styles.txt}>{data.quantidadeTurmas}</Text>
-                    <Text style={styles.txt}>{data.endereco}</Text>
-                    <Text style={styles.txt}>{data.telefone}</Text>
-                    <Text style={styles.txt}>{data.email}</Text>
-                    <Text style={styles.txt}>{data.nomeResponsavel}</Text>
-                    <Text style={styles.txt}>{data.cargoResponsavel}</Text>
-                </View>
-
-                <View style={styles.userActions}>
-                    <TouchableOpacity style={styles.editButton} onPress={editFilial}>
-                        <Text style={styles.buttonTxt}>Editar</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.editButton} onPress={deleteFilial}>
-                        <Text style={styles.buttonTxt}>Excluir</Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
         </View>
     )
 }
