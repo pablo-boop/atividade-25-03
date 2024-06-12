@@ -16,18 +16,27 @@ import usersRepository from "../../models/user/UserRepository";
 
 export default function Filiais() {
   const [visible, setVisible] = useState(false);
-  const [searchBar, setSearchBar] = useState("")
+  const [searchBar, setSearchBar] = useState("");
 
   const navigation = useNavigation();
   const isFocused = useIsFocused();
   const [allUsers, setAllUsers] = useState([]);
+  const [filteredUsers, setFilteredUsers] = useState([]);
 
   useEffect(() => {
     if (isFocused) {
       const users = usersRepository.getAll();
       setAllUsers(users);
+      setFilteredUsers(users);
     }
   }, [isFocused]);
+
+  useEffect(() => {
+    const filtered = allUsers.filter((user) =>
+      user.nomeFilial.toLowerCase().includes(searchBar.toLowerCase())
+    );
+    setFilteredUsers(filtered);
+  }, [searchBar, allUsers]);
 
   return (
     <View style={styles.container}>
@@ -42,9 +51,9 @@ export default function Filiais() {
         />
       </View>
 
-      {allUsers.length > 0 ? (
+      {filteredUsers.length > 0 ? (
         <View style={styles.userList}>
-          {allUsers.map((user) => (
+          {filteredUsers.map((user) => (
             <View key={user.id} style={styles.userItem}>
               <View>
                 <Text style={styles.nome}>{user.nomeFilial}</Text>
@@ -55,7 +64,7 @@ export default function Filiais() {
                   style={styles.detailsButton}
                   onPress={() => navigation.navigate('Details', {id: user.id})}
                 >
-                  <Text>Detalhes</Text>
+                  <Text style={styles.title}>Detalhes</Text>
                 </TouchableOpacity>
               </View>
             </View>

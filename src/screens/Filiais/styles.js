@@ -17,7 +17,8 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     backgroundColor: '#1f1b24',
     borderRadius: 10,
-    width: 250,
+    width: 300,
+    height: 75,
     marginTop: 30
   },
   userDetailButton: {
@@ -31,7 +32,7 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   userName: {
-    fontSize: 16,
+    fontSize: 20,
     color: "#fff",
     fontWeight: "bold",
   },
@@ -47,23 +48,27 @@ const styles = StyleSheet.create({
     padding: 5,
     borderRadius: 5,
     backgroundColor: "#7c5295",
-    minWidth: 70,
+    width: 100,
     alignItems: "center",
   },
   nome: {
+    fontSize: 20,
     color: '#fff'
   },
   title: {
-    color: '#fff'
+    fontSize: 20,
+    color: '#fff',
+    fontWeight: 'bold'
   },
   searchBar: {
     backgroundColor: '#1f1b24',
     borderRadius: 5,
     width: 250,
-    height: 40,
+    height: 50,
     marginTop: 30,
     padding: 10,
-    color: '#fff'
+    color: '#fff',
+    fontSize: 18
   }
 });
 
